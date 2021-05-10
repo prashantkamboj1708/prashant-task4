@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <time>Employee</time>
+
+</head>
+
+<body>
+    <div class="container mg">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered" *ngIf="employee">
+                    <thead>
+                        <tr>
+                            <th scope="col">employee id</th>
+                            <th scope="col">employee name</th>
+                            <th scope="col">department</th>
+                            <th scope="col">email</th>
+                            <th scope="col">password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{employee.employee_id}}</td>
+                            <td>{{employee.employee_name}}</td>
+                            <td>{{employee.department}}</td>
+                            <td>{{employee.email}}</td>
+                            <td>{{employee.password}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

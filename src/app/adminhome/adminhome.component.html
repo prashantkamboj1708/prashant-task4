@@ -1,0 +1,81 @@
+<div class=" container mg">
+    <div class="row">
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form8Example1">Employee id</label>
+                <input type="text" id="form8Example1" class="form-control" [(ngModel)]="empid" />
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form8Example2">Employee name</label>
+                <input type="email" id="form8Example2" class="form-control" [(ngModel)]="empname" />
+
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form8Example3">Department</label>
+                <input type="text" id="form8Example3" class="form-control" [(ngModel)]="empdept" />
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form8Example4">Email</label>
+                <input type="text" id="form8Example4" class="form-control" [(ngModel)]="email" />
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form8Example5">password</label>
+                <input type="email" id="form8Example5" class="form-control" [(ngModel)]="emppass" />
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center"><button type="button" class="btn btn-primary" style="margin-right: 10px;margin-left: 40px;" (click)="save()">{{ isUpdate?'Edit':'Add'}}</button></div>
+    <br>
+
+    <div class="d-flex justify-content-center"><button type="button" class="btn btn-warning" style="margin-right: 10px;margin-left: 40px;" (click)="reset()">Reset</button></div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">sno.</th>
+                        <th scope="col">employee id</th>
+                        <th scope="col">employee name</th>
+                        <th scope="col">department</th>
+                        <th scope="col">email</th>
+                        <th scope="col">password</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees; index as i">
+                        <th scope="row">{{i + 1}}</th>
+                        <td>{{employee.employee_id}}</td>
+                        <td>{{employee.employee_name}}</td>
+                        <td>{{employee.department}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.password}}</td>
+                        <td style="width: min-content">
+                            <button type="button" class="btn btn-primary" style="margin-right: 10px;margin-left: 40px; " (click)="fillAs(employee)">Edit</button>
+                            <button type=" button " class="btn btn-danger " style="margin-left: 10px; " (click)="delete(employee)">Delete</button>
+                            <button type=" button " class="btn btn-success " style="margin-left: 10px; " (click)="view(employee)">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
